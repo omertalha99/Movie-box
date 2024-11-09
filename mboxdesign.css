@@ -1,0 +1,1394 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Doto:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Doto:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+.sidebar2 {
+
+  border-bottom-left-radius: 15%;
+  text-align: center;
+  margin: 0;
+  right: 0;
+  padding: 0;
+  width: 80px;
+ background-color:  rgb(252, 208, 18);
+ position: fixed;
+  height: 100%;
+  color: white;
+  overflow: auto;
+  z-index: 10;
+}
+.dark-mode .sidebar2 a.active, .dark-mode .sidebar a.active, .dark-mode .sidebar a, .dark-mode .sidebar2 a, .dark-mode .navbar{
+  background: url(https://media.istockphoto.com/id/1283307885/vector/stippled-vector-texture-background-white-dots-on-black.jpg?s=612x612&w=0&k=20&c=-jnnVhrgH4vr9OC464ARX671AFmsrRK9sMJZ7baTJT0=);
+  color: whitesmoke;
+}
+
+.sidebar2 a {
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 13px;
+  text-align: center;
+  font-family: 'Doto';
+  text-decoration: none;
+  font-weight: 1000;
+  
+}
+ 
+.sidebar2 a.active {
+background-color: rgb(252, 208, 18);
+  color: rgb(0, 0, 0);
+}
+
+.sidebar2 a:hover:not(.active) {
+  background-color: #555;
+  color: rgb(0, 0, 0);
+}
+
+
+.sidebar {
+
+  border-bottom-right-radius: 15%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+background-color:  rgb(252, 208, 18);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  z-index: 10;
+}
+
+.sidebar a {
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 13px;
+  text-align: center;
+  font-family: 'doto';
+  text-decoration: none;
+  font-weight: 1000;
+  
+}
+button3 {
+position: relative;
+  top: -20px;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #7800fe 0%,
+ 
+    #ffffff 67%,
+    #fff800 100%
+  );
+  font-family: 'doto';
+  font-weight: 1000;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: border-box;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+    width: auto;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+ 
+.sidebar a.active {
+  background-image:  rgb(252, 208, 18);
+  color: rgb(0, 0, 0);
+}
+
+.sidebar a:hover:not(.active) {
+ 
+  color: rgb(0, 0, 0);
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+body {
+  background-image: url(https://png.pngtree.com/background/20230621/original/pngtree-fluorescent-yellow-geometric-background-with-glowing-neon-lines-in-3d-rendering-picture-image_3912965.jpg);
+  height: 100%; /* Set base height */
+  margin: 0;
+  padding: 0;
+ 
+
+}
+
+
+
+
+#theme-toggle-button {
+  position: fixed;
+  z-index: 20;
+  font-size: 9px;
+  right: 70px;
+  display: inline-block;
+  width: 6em;
+  top: 25px;
+  cursor: pointer;
+} 
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
+}
+.dark-mode .sidebar, .dark-mode .sidebar2{
+  background: url(https://media.istockphoto.com/id/1283307885/vector/stippled-vector-texture-background-white-dots-on-black.jpg?s=612x612&w=0&k=20&c=-jnnVhrgH4vr9OC464ARX671AFmsrRK9sMJZ7baTJT0=);
+}
+
+
+.dark-mode .navbar{
+  background-color: black;
+
+}
+/* night sky background */
+#toggle:checked + svg #container {
+  fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked + svg #button {
+  transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+  opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+  opacity: 0;
+}
+
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+  opacity: 1;
+}
+
+
+/* Dark mode styles */
+.dark-mode {
+background-color: #000;
+  color: white;
+  background-image: url(https://media.istockphoto.com/id/1283307885/vector/stippled-vector-texture-background-white-dots-on-black.jpg?s=612x612&w=0&k=20&c=-jnnVhrgH4vr9OC464ARX671AFmsrRK9sMJZ7baTJT0=);
+ 
+}
+.dark-mode .accordion{
+  background-image: none;
+}
+
+.dark-mode .menu__link
+{
+  color: whitesmoke;
+}
+/* Other specific styles for dark mode elements */
+
+/* Butonlar */
+
+button {
+
+   background-color: rgb(255, 255, 255);
+   border-radius: 100px;
+   font-size:10px;
+   color: yellow;
+  border: none; /* Sınırı kaldırır */
+  outline: none; /* Butona tıklandığında oluşan odak çerçevesini kaldırır */
+
+  padding: 10px 10px;
+
+  
+  cursor: pointer;
+
+}
+.dark-mode #button2{
+  background-color: transparent;
+  color: white;
+}
+
+
+
+#button2 {
+
+  background-color: transparent;
+  border-radius: 100px;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+ border: none; /* Sınırı kaldırır */
+ outline: none; /* Butona tıklandığında oluşan odak çerçevesini kaldırır */
+
+
+ 
+ cursor: pointer;
+
+}
+.button-dark{
+  background-color: red;
+}
+
+
+
+.age { height: 20px;
+  width: 30px;
+  border: 1px solid #7d706d; /* 2px kalınlık, düz çizgi ve turuncu renk */
+  padding: 1px; /* İçerikten kenarlık mesafesi */
+  border-radius: 20%;}
+
+button:hover {
+  background-color: #5c1e1e;
+  border-radius: 50%;
+ 
+
+}
+input {
+  width: 160px;
+  height: 30px;
+ position: relative;
+ display: flex;
+  border-radius: 25px;
+
+}
+/* Navbar */
+.navbar {
+  background-color:  rgb(252, 208, 18);
+  position: relative;
+    width: 100%;
+    height: 10vh;
+  
+justify-content: center;
+align-content: center;
+align-items: center;
+gap: 90px;
+    display: flex;
+}
+
+
+    
+
+
+/* Başlık (Logo) */
+h1 {
+    position: relative;
+ 
+font-family: 'Bungee Shade';
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 50px;
+    color: #000000;
+  }
+  
+
+/* Menü */
+.menu {
+ position: relative;
+ display: flex;
+ gap: 3vw;
+}
+
+.dark-mode .movie-info{
+color: rgb(255, 255, 255);
+  background-color: rgb(38, 36, 35);
+}
+.dark-mode h5
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #7800fe 0%,
+ 
+    #ffffff 67%,
+    #fff800 100%
+  );
+  font-family: 'doto';
+  font-weight: 1000;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 30px;
+}
+.dark-mode button3 {
+
+  
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #7800fe 0%,
+ 
+    #ffffff 67%,
+    #fff800 100%
+  );
+  font-family: 'doto';
+  font-weight: 1000;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: border-box;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+    width: auto;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.dark-mode .menu h2 a ,.dark-mode h1{
+  color: rgb(255, 255, 255);
+
+}
+
+
+/* Button Container */
+.button-container {
+  position: relative;
+  display: flex;
+
+  gap:5px; /* Butonlar arasındaki boşluk */
+  align-items: center;
+  border-radius: 100%;
+
+
+}
+h5
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #000000 0%,
+    #7a1010 29%,
+    #6e5858 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+.menu h2 {
+  position: static;
+
+  font-weight: bold;
+  font-size: 20px;
+
+  gap: 2px;
+ 
+ 
+  
+}
+.menu h2 a{
+  color: rgb(0, 0, 0);
+  font-family: 'doto';
+   font-weight: 1000;
+}
+.menu a{
+  position: relative;
+  gap: 500px;
+color: rgb(255, 255, 255);
+  
+
+}
+.topnav{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Yatayda ortalama */
+  justify-content: center;
+  width: 100%;
+ height: auto;
+ 
+}
+.dark-mode .wave{
+background: url(https://i.postimg.cc/6qKZG5Qp/Untitled-1000-x-100-px-1.png);
+
+  color: wheat;
+}
+.dark-mode .footer{
+  background-color: black;
+}
+
+/* Ana İçerik */
+.featured-content {
+  height: auto;
+  width: 100%;
+  background: linear-gradient(to bottom, #865d5d, transparent);
+  color: white;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+
+  
+}
+.featured-desc{
+  font-size: 20px;
+  text-align: center;
+  width:500px;
+  padding-top: 20px;
+  font-weight: 1000;
+  padding-bottom: 20px;
+  font-family: 'doto';
+}
+
+
+.details p{
+  position: relative;
+top: -50px;
+font-size: 1vw;
+font-weight: 1000;
+text-align: left;
+left: 160px;
+font-family: 'doto';
+
+}
+
+
+.listelist p {
+   
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+text-align: right;
+ font-weight: 1000;
+
+   
+
+ 
+ left: -140px;
+ color: purple;
+     font-size: 1vw;
+
+     width: 300px;
+   
+     
+   }
+  
+.poster-container {
+  width: 90%;
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+
+  
+}
+
+.poster-container img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+
+}
+
+
+.movie-info {
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+justify-items: center;
+  top: 30px; /* Yukarıdan sabit boşluk bırakıldı */
+  right: 0px; /* Soldan sabit boşluk bırakıldı */
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  z-index: 1;
+  color: rgb(0, 0, 0);
+ padding: 10px;
+  background-color: rgb(246, 239, 95);
+  opacity: 0.8;
+padding-top: 5px;
+  border-radius: 8px; 
+  border-color: #000000;
+  height: 460px;
+
+
+
+  font-weight: 100;
+  overflow: hidden;
+ /* İçerik hizalaması için padding eklendi */
+   /* İçeriğin poster üzerindeki alanını sınırlandırır */
+  
+}
+
+
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 370px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 36%;
+  width: 100%;
+  border-radius: 24px 24px 0 0;
+  background-color: #4070f4;
+}
+.image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #4070f4;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+.image .profile-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #fff;
+}
+.profile-card .text-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+.text-data .name {
+  font-size: 22px;
+  font-weight: 500;
+}
+.text-data .job {
+  font-size: 15px;
+  font-weight: 400;
+}
+.profile-card .media-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.media-buttons .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  margin: 0 8px;
+  background-color: #4070f4;
+  text-decoration: none;
+}
+.profile-card .buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+.buttons .button {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  border-radius: 24px;
+  margin: 0 10px;
+  padding: 8px 24px;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.buttons .button:hover {
+  background-color: #0e4bf1;
+}
+.profile-card .analytics {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+.analytics .data {
+  display: flex;
+  align-items: center;
+  color: #333;
+  padding: 0 20px;
+  border-right: 2px solid #e7e7e7;
+}
+.data i {
+  font-size: 18px;
+  margin-right: 6px;
+}
+.data:last-child {
+  border-right: none;
+}
+
+* {
+  margin: 0; 
+  padding: 0;
+}
+
+
+
+.container {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white; 
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+}
+
+.nav-container {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subnav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  color: white; 
+  width: 100%; 
+  animation: BobbySnuggles; 
+  animation-duration: .5s;
+  animation-function: ease-in-out; 
+}
+
+.subnav li {
+  padding: 20px;
+  list-style: none; 
+   
+}
+
+.nav-item.has-subnav:hover .subnav {
+  display: inherit;
+}
+
+.nav-item.has-subnav {
+  position: relative; 
+}
+
+/*Time to apply widths for accordian to work
+Width of image = 640px
+total images = 5
+so width of hovered image = 640px
+width of un-hovered image = 40px - you can set this to anything
+so total container width = 640 + 40*4 = 800px;
+default width = 800/5 = 160px;
+*/
+
+.accordion {
+  border-radius: 2%;
+  width: 1200px; height: 700px;
+  overflow: hidden;
+  margin: 30px auto;
+  box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.35);
+
+  
+}
+
+.accordion ul {
+  width: 100%;
+ 
+  
+
+
+
+}
+
+.accordion li {
+
+  
+  position: relative;
+  display: block;
+  width: 140px;
+
+
+  float: left;
+  border-left: 0px solid #888;
+  box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  
+}
+
+.accordion ul:hover li {width: 40px;}
+.accordion ul li:hover {width: 640px;}
+.accordion li img {
+  height: 700px;
+  width: 1000px;
+  display: block;
+  
+  
+}
+
+.image_title {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+height: auto;
+   bottom: 90px;  
+  overflow: auto;
+text-align: left;
+left: 40px;
+font-weight: 1000;
+max-width: auto;
+
+}
+
+.image_title a {
+  
+ 
+justify-items: center;
+  font-family: 'doto';
+  font-size: 15px;
+  top: 20px;
+  color: #fff;
+
+}
+.footer {
+  position: relative;
+  
+  width: 100%;
+  background: #fef107;
+height: 160px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+
+
+}
+
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 10 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+.menuyes{
+  display: grid;
+
+  justify-items: center;
+
+}
+.menu__link {
+  font-size: 1.3rem;
+  color: #000000;
+
+
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-family: 'doto';
+  font-weight: 600;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #000000;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.postimg.cc/gJpbvQ64/Untitled-1000-x-100-px.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes BobbySnuggles {
+  0% {
+    opacity: 0;
+    transform: rotate(15deg) scale(0);
+  }
+  100% {
+    opacity: 1; 
+    transform: rotate(0deg) scale(1);
+  }
+
+}
+/* For Mobile */
+/* Mobil uyumluluk için */
+@media (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  body {
+   width: 100%;
+   height: 59vh;
+
+  }
+
+  #theme-toggle-button {
+    position: fixed;
+    z-index: 20;
+    font-size: 4px;
+    right: 30px;
+    top: 25px;
+   
+    display: flex;
+    width: 5em;
+    cursor: pointer;
+  } 
+
+  button {
+   
+    border: none; /* Sınırı kaldırır */
+    outline: none; /* Butona tıklandığında oluşan odak çerçevesini kaldırır */
+
+    cursor: pointer;
+
+  }
+  
+  .age { height: auto;
+    width: auto;
+    position: relative;
+
+  font-size: smaller;
+    border: 1px solid #7d706d; /* 2px kalınlık, düz çizgi ve turuncu renk */
+     /* İçerikten kenarlık mesafesi */
+    border-radius: 20%;}
+  
+  button3 {
+
+      top: -0px;
+right: 0px;
+   
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        -225deg,
+        #000000 0%,
+     
+        #a75ba7 67%,
+        #ffffff 100%
+      );
+      font-family: 'doto';
+      font-weight: 1000;
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: border-box;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 2s linear infinite;
+      display: inline-block;
+        width: auto;
+    }
+    
+    @keyframes textclip {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+
+
+   
+  
+  
+  .topnav{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Yatayda ortalama */
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+   
+   
+  }
+  h5{
+    font-size: 30px;
+  }
+  
+
+  button:hover {
+    background-color: #5c1e1e;
+  }
+input p{
+  font-size: 3px;
+}
+  input {
+    width: 30px;
+    height: 7px;
+  font-size: 2px;
+    border-radius: 25px;
+
+    text-align: left;
+  }
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    height: 5vh;
+justify-content: center;
+    display: flex;
+   position: relative;
+   color: wheat;
+ gap: 10px;
+   
+     
+ 
+   
+  }
+  .featured-desc{
+    text-align: center;
+    align-content: center;
+    
+    width: 140px;
+    font-size: 6px;
+  }
+
+  /* Başlık (Logo) */
+  h1 {
+    position: relative;
+    display: flex;
+    left: auto;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 3px;
+    color: #000000;
+   
+  }
+  
+  /* Menü */
+ .menu__item a{
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+    position: relative;
+   display: flex;
+   gap: 30px;
+   font-size: 10px;
+
+  }
+  
+  /* Button Container */
+  .button-container {
+    position: relative;
+    display: flex;
+    gap: 1px;
+    right: 0px;
+       display: flex;
+    align-items: center; /* Dikeyde ortalama */
+
+
+  
+  }
+  .menu h2 a {
+    position: sticky;
+    color: rgb(0, 0, 0);
+  
+    font-size: 0.1px;
+  }
+
+  .menu h2 {
+    position: sticky;
+    color: rgb(0, 0, 0);
+  
+    font-size: 0.1px;
+  }
+   
+    .poster-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      border-bottom-right-radius: 5%;
+      border-bottom-left-radius: 5%;
+    }
+    
+  
+
+  .movie-info { padding-top:10px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+max-width: 200px;
+   height: 285px;
+
+    opacity: 0.8;
+    top: 12%; /* Reduce top spacing */
+    left: 0%; /* Center content on mobile */
+
+    font-size: 1.2vw; /* Smaller font size */
+
+    z-index: 1;
+  }
+
+  .yıldızandsure {
+   
+   position: sticky;
+    gap: 5px; /* Reduce gap */
+
+  }
+
+  #movieRating {
+    font-size: 1vw; /* Smaller font size */
+  }
+
+.listelist {
+  position: relative;
+  left: -10px;
+}
+.details{
+  position: relative;
+top: 23px;
+left: -10px;
+}
+
+
+
+
+
+
+  .movie-list-item-title,
+  .movie-list-item-desc {
+    position: relative;
+    height: 10px;
+    font-size: 1vw; /* Smaller font size */
+  }
+
+  .movie-list-item-button {
+    font-size: 1.5vw; /* Smaller font */
+    padding: 3px 8px; /* Adjust padding */
+  }
+
+  .footer{
+    justify-content: center;
+    position: relative;
+    display: block;
+   height: 20vh;
+   padding: 0;
+
+  
+
+      width: 100%;
+
+     
+      
+  }
+
+.accordion {
+  border-radius: 2%;
+  width: 80%; height: 30vh;
+
+
+
+ 
+  
+}
+
+.accordion ul {
+  width: 100%;
+  overflow: hidden;
+ 
+  
+
+
+
+}
+
+.accordion li {
+
+  left:11px;
+  position: relative;
+  display: block;
+  width: 10px;
+
+
+  float: left;
+  border-left: 0px solid #888;
+  box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  
+}
+
+.accordion ul:hover li {width: 10px;}
+.accordion ul li:hover {width:100px;}
+.accordion li img {
+  height: 200px;
+  width: 150px;
+  display: block;
+  
+  
+}
+
+  #button2 {
+
+    background-color: transparent;
+    border-radius: 100px;
+    font-size:10px;
+    color: rgb(0, 0, 0);
+   border: none; /* Sınırı kaldırır */
+   outline: none; /* Butona tıklandığında oluşan odak çerçevesini kaldırır */
+
+  
+  }
+  .sidebar a {
+    display: block;
+    color: black;
+  
+    font-size: 0.1px;
+    text-align: center;
+    text-decoration: none;
+    
+  }
+
+  .sidebar2{
+
+    border-bottom-left-radius: 15%;
+    margin: 0;
+
+    padding: 0;
+    width: 40px;
+ text-align: center;
+  
+    position: fixed;
+    height: 100%;
+
+    
+    overflow: auto;
+    z-index: 10;
+  }
+  
+
+
+
+
+
+
+
+.sidebar {
+  text-align: left;
+
+
+  border-bottom-right-radius: 15%;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+
+
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  z-index: 10;
+  font-size: 0.1px;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+font-size: 0.3px;
+  text-align: center;
+  text-decoration: none;
+  
+}
+.sidebar2 a {
+  display: block;
+  color: black;
+
+  font-size: 0.3px;
+  text-align: center;
+  text-decoration: none;
+  
+}
+
+ 
+.sidebar a.active {
+  color: rgb(0, 0, 0);
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: rgb(0, 0, 0);
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 13px;
+  height: 1000px;
+}
+
+}
